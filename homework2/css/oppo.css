@@ -1,0 +1,16 @@
+body{
+	background:url(../images/bg.gif) no-repeat top center; 
+}
+p{text-indent:2em;} 
+#top{
+	background: url(../images/banner.jpg) no-repeat top center;
+}
+#leader{
+	height: 300px;
+}
+#leader a:link{
+	text-decoration: none;
+	color: white;
+}
+
+

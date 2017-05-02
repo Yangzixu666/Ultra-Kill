@@ -1,0 +1,28 @@
+body{
+	font-size:12px;
+	font-family: "Arial";
+	color: gray;
+	line-height: 2em;
+}
+a{
+	color: #727272;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+div #leader{
+	font-size: 14px;
+	font-weight: bold;
+	color: #b9f605;
+}
+div #leader a{
+	color: white;
+}
+div #leader a:hover{
+	color: #b9f605;
+	text-decoration: none;
+}
+li{
+	list-style-type: none;
+}
