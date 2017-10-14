@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			button{
+				height: 90px;
+				width: 90px;
+				text-align: center;
+				font-size: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			var str="";
+			var n=0;
+			function show(number){
+				
+						str+=number;
+						document.getElementById("content").innerHTML=str;
+					
+			}
+
+			function clearData()
+			{
+				
+				str="";
+				document.getElementById("content").innerHTML=0;
+			}
+			function calculate()
+			{
+				document.getElementById("content").innerHTML="";
+				var result=eval(str);
+				result+="";
+				if(result.indexOf('.')>0)
+				{
+					var a=result.indexOf('.');
+					result=result.substr(0,a+2);
+				}
+				document.getElementById("content").innerHTML=result;
+				str=result;
+			}
+
+		</script>
+
+
+	</head>
+	<body>
+		<table align="center" cellpadding="10px" cellspacing="5px" width="500px" height="600px" border="1px">
+			<tr>
+				<td colspan="3" style="font-size: 40px; font-weight: bold; " align="right" id="content">0</td>
+				<td><button type="button" value="C" onclick="clearData();">C</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="1" onclick="show('1');">1</button></td>
+				<td><button type="button" value="2" onclick="show('2');">2</button></td>
+				<td><button type="button" value="3" onclick="show('3');">3</button></td>
+				<td><button type="button" value="+" onclick="show('+');">+</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="4" onclick="show('4');">4</button></td>
+				<td><button type="button" value="5" onclick="show('5');">5</button></td>
+				<td><button type="button" value="6" onclick="show('6');">6</button></td>
+				<td><button type="button" value="-" onclick="show('-');">-</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="7" onclick="show('7');">7</button></td>
+				<td><button type="button" value="8" onclick="show('8');">8</button></td>
+				<td><button type="button" value="9" onclick="show('9');">9</button></td>
+				<td><button type="button" value="*" onclick="show('*');">*</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="0" onclick="show('0');">0</button></td>
+				<td><button type="button" value="." onclick="show('.');">.</button></td>
+				<td><button type="button" value="=" onclick="calculate();">=</button></td>
+				<td><button type="button" value="/" onclick="show('/');">/</button></td>
+			</tr>
+		</table>
+	</body>
+</html>
