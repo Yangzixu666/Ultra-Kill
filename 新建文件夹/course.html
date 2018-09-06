@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+		<style type="text/css">
+			tr
+			{
+				height: 80px;
+			}
+			body
+			{
+				color: black;
+				background-image: url(6.jpg);
+				background-repeat: no-repeat;
+				font-weight: bold;
+			}
+		</style>
+		<script type="text/javascript">
+			function startTime()
+			{
+				var D=new Date()
+				var weekday=new Array(7)
+				weekday[0]="星期日"
+				weekday[1]="星期一"
+				weekday[2]="星期二"
+				weekday[3]="星期三"
+				weekday[4]="星期四"
+				weekday[5]="星期五"
+				weekday[6]="星期六"
+				var dateArr = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+				var today=new Date()
+				var h=today.getHours()
+				var m=today.getMinutes()
+				var s=today.getSeconds()
+				var y=today.getFullYear()
+				var M=today.getMonth()
+				var d=today.getDate()
+				var result = 0;
+
+				for ( var i = 0; i < M; i++) {
+					result += dateArr[i];
+				}
+				result+=d;
+				if (M > 1 && (y % 4 == 0 && y % 100 != 0) || y % 400 == 0) {
+					result += 1;
+				}
+				var z=parseInt((result-246)/7+1);
+
+				m=checkTime(m)
+				s=checkTime(s)
+				M+=1;
+				document.getElementById('txt').innerHTML="今天是"+y+"年"+M+"月"+d+"日 "+weekday[D.getDay()]+" "+h+":"+m+":"+s+"  第"+z+"周"
+				t=setTimeout('startTime()',500)
+			}
+
+			function checkTime(i)
+			{
+				if (i<10) 
+				  {
+				  	i="0" + i
+				  }
+				  return i
+			}
+		</script>
+	</head>
+	<body onload="startTime()" >
+		<table border="1" width="65%" cellspacing="0" style="table-layout:fixed; text-align: center;" align="center">
+			<tr>
+				<td colspan="6">
+					<p style="font-size: 18px">杨博皓的课程表</p>
+				</td>
+			</tr>
+			<tr>
+				<td id="txt" colspan="6">
+					
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<th>星期一</th>
+				<th>星期二</th>
+				<th>星期三</th>
+				<th>星期四</th>
+				<th>星期五</th>
+			</tr>
+			<tr>
+				<td>一</td>
+				<td>课程名：实变函数<br>教师：张玫玉<br>上课时间：[1-2节]<br>上课周：[1-16周]</td>
+				<td></td>
+				<td>课程名：西方经济学<br>教师：刘琦<br>上课时间：[1-2节]<br>上课周：[1-16周]</td>
+				<td></td>
+				<td>课程名：实变函数<br>教师：张玫玉<br>上课时间：[1-2节]<br>上课周：[1-16周]</td>
+			</tr>
+			<tr>
+				<td>二</td>
+				<td>课程名：会计学概论<br>教师：乔吉俊<br>上课时间：[3-4节]<br>上课周：[1-16周]</td>
+				<td></td>
+				<td>课程名：会计学概论<br>教师：乔吉俊<br>上课时间：[3-4节]<br>上课周：[1-16周]</td>
+				<td></td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>三</td>
+				<td>课程名：运筹学<br>教师：温杰<br>上课时间：[5-6节]<br>上课周：[1-16周]</td>
+				<td></td>
+				<td>课程名：运筹学<br>教师：温杰<br>上课时间：[5-6节]<br>上课周：[1-16周]</td>
+				<td></td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>四</td>
+				<td>课程名：西方经济学<br>教师：刘琦<br>上课时间：[7-8节]<br>上课周：[1-16周]</td>
+				<td></td>
+				<td></td>
+				<td><font color="red">课程名：形式与政策<br>教师：刘凤兰<br>上课时间：[7-8节]<br>上课周：[9周]</font></td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>
